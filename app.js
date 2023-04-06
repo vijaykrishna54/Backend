@@ -16,7 +16,7 @@ const traineeRoutes = require("./routes/trainee-routes");
 //Middlewares
 app.use(express.json()); //alows to pass a JSON
 app.use(express.urlencoded());
-app.use(cors({credentials: true, origin : "http://localhost:3000"}));
+app.use(cors());
 app.use(cookieParser());
 app.use("/instructors", instructorRoutes); // Which means => localhost:5000/instructors
 app.use("/trainees",traineeRoutes ); // Which means => localhost:5000/trainees
