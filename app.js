@@ -28,7 +28,7 @@ app.use("/auth", authRoutes); //Which means => localhost:5000/auth
 mongoose.connect(process.env.MONGO_URI).then(()=>{
     console.log("Connection to database is successfull!");
 
-    app.listen(process.env.PORT, ()=>{
+    app.listen(process.env.PORT || 8085, ()=>{
         console.log(`Server is running on port : ${process.env.PORT}`);
     })
 }).catch((error)=>{

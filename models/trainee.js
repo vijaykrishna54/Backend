@@ -14,7 +14,7 @@ const TraineeSchema = new Schema ({
         },
     password : {
         type : String,
-        required : true,
+        required : false,
         },
        
     description : {
@@ -27,8 +27,12 @@ const TraineeSchema = new Schema ({
         },
     image : {
         type : String,
-        required : false,
+        required : true,
+        
     },
+    available : {
+        type : Boolean,
+    }
     },
     {
             timestamps : true

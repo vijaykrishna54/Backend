@@ -35,15 +35,15 @@ const getById = async (req, res, next) => {
   
   //This is a controller funtion to add trainee to database
   const addTrainee = async (req, res, next) => {
-    const { name, email, password, description, contact } = req.body;
+    const { name, email, description, contact, image } = req.body;
     let trainee;
     try {
       trainee = new Trainee({
         name,
         email,
-        password,
         description,
         contact,
+        image
       });
       await trainee.save();
     } catch (err) {
@@ -59,15 +59,15 @@ const getById = async (req, res, next) => {
   //This controller funtion is to find trainee by ID and update details
   const updateTrainee = async (req, res, next) => {
     const id = req.params.id;
-    const { name, email, password, description, contact } = req.body;
+    const { name, email, description, contact, image } = req.body;
     let trainee;
     try {
       trainee = await Trainee.findByIdAndUpdate(id, {
           name,
           email,
-          password,
           description,
           contact,
+          image
       });
       trainee = await trainee.save();
     } catch (err) {
